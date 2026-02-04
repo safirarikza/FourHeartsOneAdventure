@@ -1,0 +1,175 @@
+body {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    margin: 0;
+    background-color: #f4f1de;
+    color: #3d405b;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #81b29a;
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+    border-bottom: 8px solid #e07a5f;
+}
+
+.top-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h1 {
+    font-family: 'Fredoka', cursive;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+/* Pengaturan Halaman */
+.page {
+    display: none; /* Sembunyikan halaman secara default */
+    padding: 30px 15px;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 0.5s;
+}
+
+.page.active {
+    display: block; /* Tampilkan jika aktif */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 30px;
+    border: 4px solid #f2cc8f;
+    box-shadow: 0 10px 0 #d4a373;
+    text-align: center;
+}
+
+/* --- UPDATE BAGIAN VIDEO 16:9 --- */
+.video-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 100%;     /* Pastikan tidak luber di HP */
+    aspect-ratio: 16 / 9; /* Mengunci bentuk landscape */
+    object-fit: cover;    /* Video mengisi kotak dengan rapi */
+    border-radius: 20px;
+    background-color: #000; /* Warna hitam saat loading file besar */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* Tombol Navigasi */
+.btn-nav {
+    background-color: #e07a5f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 5px 0 #bc614a;
+    transition: 0.2s;
+}
+
+.btn-nav:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #bc614a;
+}
+
+.btn-back {
+    background-color: #81b29a;
+    box-shadow: 0 5px 0 #608a75;
+}
+
+/* Galeri Foto */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-card {
+    background: #fff;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #81b29a;
+    border-radius: 15px;
+    position: relative;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Posisi Ikon Hewan di Frame */
+.animal-sticker {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 2rem;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #81b29a;
+}
+/* --- KODE KHUSUS UNTUK TAMPILAN HP --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Memberi jarak di pinggir layar HP */
+    }
+
+    .card {
+        width: 95% !important; /* Kartu memenuhi layar HP */
+        padding: 15px !important;
+        margin: 10px auto;
+        box-sizing: border-box;
+    }
+
+    h2 {
+        font-size: 1.3rem !important; /* Judul mengecil agar tidak terpotong */
+        line-height: 1.4;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column; /* Foto disusun ke bawah, bukan ke samping */
+        gap: 15px;
+    }
+
+    .photo-card {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .btn-nav {
+        width: 100%; /* Tombol lebar penuh agar mudah diklik jempol */
+        font-size: 14px;
+        padding: 15px;
+        white-space: normal; /* Biar teks panjang seperti 'Back to Explorers in Action' bisa turun ke baris baru kalau gak muat */
+    }
+}
